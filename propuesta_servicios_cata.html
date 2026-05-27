@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Servicios — Soy Cata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Josefin Sans', system-ui, sans-serif;
+    background: #FFF0F3;
+    padding: 2rem 1rem;
+    color: #1E1E1E;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 740px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(201,77,109,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #FFF0F3;
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    border-bottom: 0.5px solid #FFD6E4;
+  }
+
+  .header-slogan {
+    font-family: 'Satisfy', cursive;
+    
+    font-weight: 300;
+    font-size: 52px;
+    color: #C94D6D;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .header-name {
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 0.32em;
+    color: #1E1E1E;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .divider {
+    width: 32px;
+    height: 0.5px;
+    background: #FFB6C8;
+    margin: 0 auto 18px;
+  }
+
+  .header-keywords {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    color: #E8829E;
+    text-transform: uppercase;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 3rem 3.5rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    color: #C94D6D;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-rule {
+    height: 0.5px;
+    background: #FFD6E4;
+    margin-bottom: 1.4rem;
+  }
+
+  /* ── TEXTO ── */
+  p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.85;
+    text-align: justify;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  p strong {
+    font-weight: 400;
+    color: #C94D6D;
+  }
+
+  /* ── SERVICIOS ── */
+  .service {
+    margin-bottom: 2rem;
+  }
+
+  .service-title {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    color: #C94D6D;
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.85;
+    text-align: justify;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #555;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+
+  .bullets li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FFB6C8;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── POR QUÉ ── */
+  .why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* ── CONTACTO ── */
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: #CCCCCC;
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 64px;
+    flex-shrink: 0;
+  }
+
+  .contact-value {
+    font-size: 13px;
+    font-weight: 300;
+    color: #1E1E1E;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 0.5px solid #FFD6E4;
+    padding: 1.5rem 3.5rem;
+    text-align: center;
+  }
+
+  .footer p {
+    font-family: 'Satisfy', cursive;
+    
+    font-size: 16px;
+    font-weight: 300;
+    color: #E8A0B4;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-slogan">Soy Cata.</div>
+    <div class="header-name">Catalina Zanardo</div>
+    <div class="divider"></div>
+    <div class="header-keywords">Accesibilidad · Diseño Universal · Modelo Social</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- PRESENTACIÓN -->
+    <div class="section">
+      <div class="section-label">Presentación</div>
+      <div class="section-rule"></div>
+      <p>Soy Catalina Zanardo, y me dedico al campo de la discapacidad y la accesibilidad desde un lugar práctico, comprometido y centrado en las personas. Cuento con formación certificada en <strong>Lengua de Señas Argentina (LSA), Braille y Diseño Universal para el Aprendizaje (DUA)</strong>, junto con experiencia directa en acompañamiento, adaptación de materiales, capacitación y diseño de dispositivos de apoyo en ámbitos universitarios y comunitarios.</p>
+      <p>Mi trabajo se enmarca en el <strong>modelo social de la discapacidad</strong>, perspectiva que entiende que las barreras están en el entorno y no en las personas. Desde ahí acompaño, asesoro y formo a personas, familias e instituciones para construir entornos genuinamente más accesibles e inclusivos.</p>
+    </div>
+
+    <!-- ÁREAS DE TRABAJO -->
+    <div class="section">
+      <div class="section-label">Áreas de trabajo</div>
+      <div class="section-rule"></div>
+
+      <div class="service">
+        <div class="service-title">Personas y familias</div>
+        <p class="service-desc">Acompaño a personas en situación de discapacidad y a sus familias en los procesos que van surgiendo: orientación sobre derechos, recursos disponibles, estrategias cotidianas y apoyos concretos. El acompañamiento es personalizado, partiendo siempre de una escucha real de cada situación.</p>
+        <ul class="bullets">
+          <li>Orientación sobre derechos y recursos en discapacidad</li>
+          <li>Acompañamiento especializado en discapacidad visual</li>
+          <li>Estrategias de comunicación accesible: LSA y Braille</li>
+          <li>Acompañamiento a familias en procesos de diagnóstico o adaptación</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div class="service-title">Instituciones y organizaciones</div>
+        <p class="service-desc">Trabajo con instituciones, organismos y organizaciones que buscan incorporar la accesibilidad y la inclusión de manera real y sostenida. Diseño junto con los equipos dispositivos de apoyo, acciones inclusivas y estrategias con impacto concreto en el entorno y en las personas.</p>
+        <ul class="bullets">
+          <li>Diagnóstico de barreras y oportunidades de accesibilidad</li>
+          <li>Diseño de dispositivos de apoyo para personas con discapacidad</li>
+          <li>Planificación e implementación de acciones inclusivas</li>
+          <li>Producción y revisión de materiales educativos y académicos accesibles</li>
+          <li>Acompañamiento en el desarrollo de políticas de inclusión institucional</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div class="service-title">Capacitaciones</div>
+        <p class="service-desc">Diseño y dicto capacitaciones para equipos de trabajo, comunidades educativas, organizaciones civiles y entes públicos. Cada propuesta se construye desde las necesidades específicas del grupo, con contenidos actualizados, dinámicos y anclados en la práctica.</p>
+        <ul class="bullets">
+          <li>Discapacidad desde el modelo social: perspectiva crítica y derechos</li>
+          <li>Accesibilidad comunicacional, física y digital</li>
+          <li>Diseño Universal para el Aprendizaje (DUA)</li>
+          <li>Lengua de Señas Argentina: sensibilización e introducción</li>
+          <li>Braille, discapacidad visual y materiales académicos accesibles</li>
+          <li>Atención y trato adecuado hacia personas con discapacidad</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- POR QUÉ -->
+    <div class="section">
+      <div class="section-label">Por qué trabajar conmigo</div>
+      <div class="section-rule"></div>
+      <ul class="bullets why-grid">
+        <li>Formación certificada y actualizada en discapacidad, accesibilidad, LSA, Braille y DUA</li>
+        <li>Experiencia directa acompañando personas con discapacidad visual en contextos universitarios</li>
+        <li>Perspectiva del modelo social: las barreras están en el entorno, no en las personas</li>
+        <li>Estilo de trabajo cercano, práctico y orientado a soluciones concretas</li>
+        <li>Propuestas adaptadas a las necesidades reales de cada persona u organización</li>
+      </ul>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="section" style="margin-bottom:0">
+      <div class="section-label">Contacto</div>
+      <div class="section-rule"></div>
+      <div class="contact-row">
+        <span class="contact-label">WhatsApp</span>
+        <span class="contact-value">+54 9 2944 227392</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">catazanardo@gmail.com</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Soy Cata. — y lo que soy, lo hago.</p>
+  </div>
+
+</div>
+</body>
+</html>

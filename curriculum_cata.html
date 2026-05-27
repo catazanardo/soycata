@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum — Catalina Zanardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Josefin Sans', system-ui, sans-serif;
+    background: #FFF0F3;
+    padding: 2rem 1rem;
+    color: #1E1E1E;
+  }
+
+  .page {
+    background: #fff;
+    max-width: 740px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(201,77,109,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #FFF0F3;
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    border-bottom: 0.5px solid #FFD6E4;
+  }
+
+  .header-slogan {
+    font-family: 'Satisfy', cursive;
+    
+    font-weight: 300;
+    font-size: 52px;
+    color: #C94D6D;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .header-name {
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 0.32em;
+    color: #1E1E1E;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .divider {
+    width: 32px;
+    height: 0.5px;
+    background: #FFB6C8;
+    margin: 0 auto 18px;
+  }
+
+  .header-keywords {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    color: #E8829E;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .header-contact {
+    font-size: 11px;
+    font-weight: 300;
+    color: #AAAAAA;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 3rem 3.5rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    color: #C94D6D;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-rule {
+    height: 0.5px;
+    background: #FFD6E4;
+    margin-bottom: 1.4rem;
+  }
+
+  /* ── TEXTO ── */
+  p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.85;
+    text-align: justify;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  p strong {
+    font-weight: 400;
+    color: #C94D6D;
+  }
+
+  /* ── ENTRADA (formación / experiencia) ── */
+  .entry {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 0.5px solid #FFF0F3;
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .entry-title {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #1E1E1E;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .entry-subtitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 300;
+    color: #E8829E;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .entry-date {
+    font-size: 10px;
+    font-weight: 300;
+    color: #CCCCCC;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  .entry-desc {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── BULLETS ── */
+  .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #555;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+
+  .bullets li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FFB6C8;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 0.5px solid #FFD6E4;
+    padding: 1.5rem 3.5rem;
+    text-align: center;
+  }
+
+  .footer p {
+    font-family: 'Satisfy', cursive;
+    font-size: 16px;
+    font-weight: 300;
+    color: #E8A0B4;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-slogan">Soy Cata.</div>
+    <div class="header-name">Catalina Zanardo</div>
+    <div class="divider"></div>
+    <div class="header-keywords">Accesibilidad · Diseño Universal · Modelo Social</div>
+    <div class="header-contact">+54 9 2944 227392 &nbsp;|&nbsp; catazanardo@gmail.com</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- PERFIL -->
+    <div class="section">
+      <div class="section-label">Perfil profesional</div>
+      <div class="section-rule"></div>
+      <p>Me dedico al campo de la discapacidad y la accesibilidad desde una perspectiva práctica y comprometida. Cuento con formación certificada en <strong>Lengua de Señas Argentina, Braille y Diseño Universal para el Aprendizaje (DUA)</strong>, junto con experiencia directa en acompañamiento, capacitación, adaptación de materiales y diseño de dispositivos de apoyo en ámbitos universitarios y comunitarios.</p>
+      <p>Mi trabajo se enmarca en el <strong>modelo social de la discapacidad</strong>: las barreras están en el entorno, no en las personas. La accesibilidad es un derecho, y desde esa convicción acompaño a personas, familias e instituciones.</p>
+    </div>
+
+    <!-- FORMACIÓN -->
+    <div class="section">
+      <div class="section-label">Formación y capacitaciones</div>
+      <div class="section-rule"></div>
+
+      <div class="entry">
+        <div class="entry-title">Curso de Lengua de Señas Argentina y Técnicas de Interpretación</div>
+        <div class="entry-subtitle">Fundación Alas de Águila LSA</div>
+        <div class="entry-date">En curso</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Diseño Universal para el Aprendizaje (DUA)</div>
+        <div class="entry-subtitle">Plataforma de Formación Abierta — Plena Inclusión</div>
+        <div class="entry-date">2026 · 15 horas</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Curso de Discapacidad: Aproximaciones desde una Perspectiva Crítica y Social</div>
+        <div class="entry-subtitle">FLEDNI — Fundación Latinoamericana para la Enseñanza y Estudio de la Diversidad y Trastornos de la Niñez</div>
+        <div class="entry-date">Diciembre 2025 · 50 horas cátedra</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">10.ª Jornada de la Red Regional Educación Superior, Discapacidad y Derechos Humanos</div>
+        <div class="entry-subtitle">Comunidad Sorda y Accesibilidad en Nivel Superior — ISFD N.° 4 · Certificado por el Consejo de Educación de la Provincia de Neuquén</div>
+        <div class="entry-date">Julio 2025 · 10 horas cátedra</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Curso Intensivo: Introducción a la Producción de Material Académico Accesible</div>
+        <div class="entry-subtitle">Comisión Universitaria sobre Accesibilidad al Medio Físico Social — Secretaría de Bienestar Universitario, UNCo</div>
+        <div class="entry-date">Abril 2024 · Virtual</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Taller de Movimiento a Ciegas — Nivel 1</div>
+        <div class="entry-subtitle">Equipo de Accesibilidad CRUB</div>
+        <div class="entry-date">30 de abril de 2022 · 3 horas</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Jornadas de Capacitación Docente: Tópicos Selectos para el Fortalecimiento de la Enseñanza de las Ciencias Naturales en el Aula</div>
+        <div class="entry-subtitle">Facultad de Ciencias Naturales y Museo — UNLP</div>
+        <div class="entry-date">Julio 2021</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Ciclo Webinar: Enseñanza en Escenarios Digitales — Lo Deseado, lo Posible y lo Real</div>
+        <div class="entry-subtitle">Secretaría Académica de la UNCo · Secretaría de Extensión, Facultad de Informática</div>
+        <div class="entry-date">Abril — Mayo 2021</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Lengua de Señas y Cultura de la Comunicación Sorda — Nivel Medio y Avanzado</div>
+        <div class="entry-subtitle">Asociación de Sordos de Río Negro · FADECS-UNCo</div>
+        <div class="entry-date">Enero — Diciembre 2020</div>
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <div class="section">
+      <div class="section-label">Experiencia</div>
+      <div class="section-rule"></div>
+
+      <div class="entry">
+        <div class="entry-title">Participación ciudadana en CO.MA.Dis — Municipalidad de Villa La Angostura</div>
+        <div class="entry-date">Actualidad</div>
+        <div class="entry-desc">Participo en las reuniones mensuales de la Comisión Municipal de Discapacidad (CO.MA.Dis). Actualmente trabajo de manera conjunta con el Área de Cultura de la Municipalidad para llevar a cabo un proyecto de difusión de LSA en todas las instituciones educativas de Villa La Angostura, junto a la Fundación Alas de Águila.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Voluntaria ad honorem — Comisión de Accesibilidad UNCo-CRUB</div>
+        <div class="entry-date">Agosto 2022 — Actualidad</div>
+        <div class="entry-desc">Colaboración continua con el equipo de accesibilidad del Centro Regional Universitario Bariloche, participando en acciones y proyectos según las necesidades del espacio.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Becaria Pre-profesional — Comisión de Accesibilidad UNCo-CRUB</div>
+        <div class="entry-date">Febrero 2021 — Agosto 2022</div>
+        <div class="entry-desc">Acompañamiento a estudiantes en situación de discapacidad: adaptación de material, generación de dispositivos de apoyo y articulación entre estudiantes y docentes. Participación en webinars y organización de talleres para la comunidad universitaria sobre discapacidad y accesibilidad. Integré el equipo organizador del Taller de Recursos y Estrategias Accesibles en la Universidad (Nivel 1, CRUB, febrero de 2022).</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Ayudante Alumna — Cátedra Pedagogía (Prof. Ed. Física y Prof. Cs. Biológicas, UNCo)</div>
+        <div class="entry-date">Abril 2019 — Abril 2021</div>
+        <div class="entry-desc">Acompañamiento a dos estudiantes sordos del Profesorado de Educación Física durante el ciclo 2019. Comunicación en LSA, trabajo articulado con intérpretes, comprensión de adaptaciones de lectoescritura para hablantes de LSA como primera lengua, y diseño e implementación de estrategias de accesibilidad en las actividades de la cátedra.</div>
+      </div>
+
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="section" style="margin-bottom:0">
+      <div class="section-label">Habilidades y conocimientos</div>
+      <div class="section-rule"></div>
+      <ul class="bullets">
+        <li>Lengua de Señas Argentina (LSA) — nivel en formación avanzada</li>
+        <li>Sistema Braille — lectura y escritura</li>
+        <li>Diseño Universal para el Aprendizaje (DUA)</li>
+        <li>Acompañamiento a personas con discapacidad visual</li>
+        <li>Producción y adaptación de materiales educativos y académicos accesibles</li>
+        <li>Diseño de dispositivos de apoyo y estrategias de accesibilidad</li>
+        <li>Capacitación y formación en discapacidad e inclusión</li>
+        <li>Perspectiva del modelo social de la discapacidad</li>
+        <li>Trabajo en entornos universitarios y comunitarios</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Soy Cata. — y lo que soy, lo hago.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soy Cata — Catalina Zanardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: #FFF0F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', system-ui, sans-serif;
+    padding: 2rem 1rem;
+  }
+  .card {
+    background: #ffffff;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(201, 77, 109, 0.10);
+  }
+  .card-header {
+    background: #FFF0F3;
+    padding: 2.5rem 2.5rem 2rem;
+    text-align: center;
+  }
+  .monogram { display: none; }
+  .name {
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 0.28em;
+    color: #1E1E1E;
+    text-transform: uppercase;
+  }
+  .slogan {
+    font-family: 'Satisfy', cursive;
+    
+    font-size: 22px;
+    color: #C94D6D;
+    margin-top: 0.5rem;
+  }
+  .divider { width: 28px; height: 0.5px; background: #FFB6C8; margin: 1.4rem auto; }
+  .descriptor {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    color: #E8829E;
+    text-transform: uppercase;
+  }
+  .card-body { padding: 2rem 2.5rem; }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: #CCCCCC;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+    font-weight: 300;
+  }
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+  }
+  .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #FFB6C8;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .service-text {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #4A4A4A;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .chips-section { margin: 1.4rem 0; }
+  .knowledge-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .knowledge-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #4A4A4A;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .knowledge-list li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FFB6C8;
+    flex-shrink: 0;
+  }
+  .perspective {
+    background: #FFF0F3;
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    margin: 1.4rem 0;
+    text-align: center;
+  }
+  .perspective p {
+    font-size: 11px;
+    font-weight: 300;
+    color: #C94D6D;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+    text-align: center;
+  }
+  .contact-section {
+    border-top: 0.5px solid #F5E0E6;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .contact-btn:hover { opacity: 0.85; }
+  .contact-btn.whatsapp { background: #F0FBF4; }
+  .contact-btn.email    { background: #FFF0F3; }
+  .btn-icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .whatsapp .btn-icon { background: #25A244; }
+  .email    .btn-icon { background: #C94D6D; }
+  .btn-text { display: flex; flex-direction: column; gap: 1px; }
+  .btn-label {
+    font-size: 8.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  .whatsapp .btn-label { color: #25A244; opacity: 0.7; }
+  .email    .btn-label { color: #C94D6D; opacity: 0.7; }
+  .btn-value { font-size: 12.5px; font-weight: 300; letter-spacing: 0.04em; }
+  .whatsapp .btn-value { color: #25A244; }
+  .email    .btn-value { color: #C94D6D; }
+  .footer {
+    text-align: center;
+    padding: 1.4rem 1rem;
+    border-top: 0.5px solid #F5EAF0;
+    font-family: 'Satisfy', cursive;
+    
+    font-size: 13px;
+    color: #E8A0B4;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <div class="monogram">CZ</div>
+    <div class="name">Catalina Zanardo</div>
+    <div class="slogan">Soy Cata.</div>
+    <div class="divider"></div>
+    <div class="descriptor">Accesibilidad · Diseño Universal · Modelo Social</div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Lo que hago</div>
+    <div class="service-item">
+      <div class="dot"></div>
+      <div class="service-text">Asesoramiento y acompañamiento a personas en situación de discapacidad y sus familias</div>
+    </div>
+    <div class="service-item">
+      <div class="dot"></div>
+      <div class="service-text">Diseño de dispositivos de apoyo y acciones inclusivas para instituciones y organizaciones</div>
+    </div>
+    <div class="service-item">
+      <div class="dot"></div>
+      <div class="service-text">Capacitaciones en discapacidad, accesibilidad y Diseño Universal para el Aprendizaje (DUA)</div>
+    </div>
+    <div class="service-item">
+      <div class="dot"></div>
+      <div class="service-text">Producción y revisión de materiales educativos y académicos accesibles</div>
+    </div>
+
+    <div class="chips-section">
+      <div class="section-label">Áreas de conocimiento</div>
+      <ul class="knowledge-list">
+        <li>Lengua de Señas Argentina (LSA)</li>
+        <li>Braille y discapacidad visual</li>
+        <li>Diseño Universal para el Aprendizaje (DUA)</li>
+        <li>Accesibilidad académica y producción de materiales</li>
+        <li>Comunidad sorda y cultura de la comunicación</li>
+        <li>Modelo social de la discapacidad</li>
+      </ul>
+    </div>
+
+    <div class="perspective">
+      <p>Desde el modelo social de la discapacidad<br>Las barreras están en el entorno, no en las personas.</p>
+    </div>
+
+    <div class="contact-section">
+      <a class="contact-btn whatsapp" href="https://wa.me/5492944227392">
+        <div class="btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">WhatsApp</span>
+          <span class="btn-value">+54 9 2944 227392</span>
+        </div>
+      </a>
+      <a class="contact-btn email" href="mailto:catazanardo@gmail.com">
+        <div class="btn-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Email</span>
+          <span class="btn-value">catazanardo@gmail.com</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">Soy Cata. — y lo que soy, lo hago.</div>
+</div>
+</body>
+</html>
